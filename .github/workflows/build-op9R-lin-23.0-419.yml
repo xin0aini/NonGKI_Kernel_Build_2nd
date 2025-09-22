@@ -80,7 +80,7 @@ env:
   SKIP_PATCH: "false" # Ignore errors found in Patch Debugger.
 
   BUILD_OTHER_CONFIG: "true" # Merge config files.
-  MERGE_CONFIG_FILES: "vendor/xiaomi/sdm845-common.config,vendor/xiaomi/polaris.config"
+  MERGE_CONFIG_FILES: "vendor/kona-perf_defconfig,vendor/oplus.config"
 
   FREE_MORE_SPACE: "false" # if u want get more space, enabled it.
 
