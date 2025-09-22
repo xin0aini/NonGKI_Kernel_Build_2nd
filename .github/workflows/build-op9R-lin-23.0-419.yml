@@ -1,4 +1,4 @@
-name: Build Xiaomi Mix2s (Based AOSP A15) (Kernel 4.19)
+name: build-op9R-lin-23.0 (Based lin23.0) (Kernel 4.19)
 
 on:
   workflow_call:
@@ -6,14 +6,14 @@ on:
 
 env:
   # Device env
-  DEVICE_NAME : "xiaomi_mix2s"
-  DEVICE_CODENAME : "polaris"
+  DEVICE_NAME : "OnePlus 9R"
+  DEVICE_CODENAME : "LE2100"
 
   CUSTOM_CMDS : "CLANG_TRIPLE=aarch64-linux-gnu-"
   EXTRA_CMDS : "LLVM=1 LLVM_IAS=1"
 
-  KERNEL_SOURCE : "https://github.com/duckyduckG/android_kernel_xiaomi_sdm845_419.git"
-  KERNEL_BRANCH : "perf"
+  KERNEL_SOURCE : "https://github.com/LineageOS/android_kernel_oneplus_sm8250"
+  KERNEL_BRANCH : "lineage-23.0"
 
   CLANG_SOURCE : "https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/LLVM-19.1.7-Linux-X64.tar.xz"
   CLANG_BRANCH : ""
@@ -25,7 +25,7 @@ env:
   GCC_32_BRANCH : "android12L-release"
 
   DEFCONFIG_SOURCE: ""
-  DEFCONFIG_NAME : "vendor/sdm845-perf_defconfig"
+  DEFCONFIG_NAME : "vendor/kona-perf_defconfig"
   DEFCONFIG_ORIGIN_IMAGE: ""
   DEFCONFIG_FROM_BOOT: false
 
@@ -86,7 +86,7 @@ env:
 
 jobs:
   build-kernel:
-    name: Xiaomi Mix2s (Based AOSP A15) (Kernel 4.19)
+    name: op9R-lin-23.0 (Based lin23.0) (Kernel 4.19)
     runs-on: ubuntu-22.04
     env:
       CCACHE_COMPILERCHECK: "%compiler% -dumpmachine; %compiler% -dumpversion"
