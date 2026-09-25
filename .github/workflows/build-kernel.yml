@@ -39,6 +39,13 @@ jobs:
     uses: ./.github/workflows/build-oneplus-8-series-cos15-a15.yml
     secrets: inherit
 
+  build-oneplus-9r-oos13-a13-xtd:
+    name: "OnePlus 9R (OxygenOS 13.1 A13) (XTD Kernel)"
+    strategy:
+      fail-fast: true
+    uses: ./.github/workflows/build-oneplus-9r-oos13-a13-xtd.yml
+    secrets: inherit
+
   # Samsung
   build-samsung-a71-aosp-oneui-a16:
     name: "Samsung Galaxy A71 (AOSP Based & OneUI A16)"
